@@ -1,0 +1,16 @@
+# Local and private configuration
+.DS_Store
+node_modules/
+.env
+.env.*
+*.log
+private/
+local/
+*.local.*
+*entities*.json*
+home-panel*
+# Use a deliberately curated public demo asset directory later.
+*.png
+*.jpg
+*.jpeg
+*.webp
