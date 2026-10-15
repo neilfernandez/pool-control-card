@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a problem with the card or visual editor.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Card version
+    validations:
+      required: true
+  - type: input
+    id: homeassistant
+    attributes:
+      label: Home Assistant version
+    validations:
+      required: true
+  - type: input
+    id: controller
+    attributes:
+      label: Pool controller and integration
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Include expected behavior and steps to reproduce. Remove private entity names, addresses and photos before sharing.
+    validations:
+      required: true

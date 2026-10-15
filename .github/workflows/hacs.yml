@@ -1,0 +1,15 @@
+name: HACS validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  validate:
+    # HACS only supports public repositories. Enable automatically after publication.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hacs/action@main
+        with:
+          category: plugin

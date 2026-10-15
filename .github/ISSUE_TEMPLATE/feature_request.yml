@@ -1,0 +1,10 @@
+name: Feature request
+description: Suggest a card or editor improvement.
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: What would you like to do?
+      description: Describe the pool equipment or dashboard use case.
+    validations:
+      required: true

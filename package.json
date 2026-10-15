@@ -1,0 +1,15 @@
+{
+  "name": "pool-control-card",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A photo-led Home Assistant pool card with a visual configuration editor.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check pool-control-card.js && node scripts/check-project.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "demo": "node scripts/demo.cjs"
+  }
+}

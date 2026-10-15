@@ -1,0 +1,48 @@
+# Add as a view in your dashboard's raw configuration editor.
+title: Pool
+path: pool
+type: panel
+cards:
+  - type: custom:pool-control-card
+    title: Pool
+    area: GARDEN
+    controller: Pool controller
+    layout: panel
+    image: /local/your-pool-image.jpg
+    image_caption: The pool
+    accent: aqua
+    entities:
+      water: sensor.example_pool_water_temperature
+      air: sensor.example_outdoor_temperature
+      heater: water_heater.example_pool_heater
+      heating: binary_sensor.example_pool_heating
+      pump: switch.example_pool_pump
+      speed: number.example_pool_pump_speed
+      low: button.example_pool_pump_low
+      medium: button.example_pool_pump_medium
+      high: button.example_pool_pump_high
+      power: sensor.example_pool_pump_power
+      flow: binary_sensor.example_pool_flow
+      lights: light.example_pool_lights
+      landscape: switch.example_landscape_lights
+      salt: sensor.example_pool_salt
+      instantSalt: sensor.example_pool_instant_salt
+      chlorinator: switch.example_pool_chlorinator
+      generating: binary_sensor.example_pool_generating
+      output: number.example_pool_chlorinator_output
+      fault: binary_sensor.example_pool_chlorinator_fault
+      alert: binary_sensor.example_pool_chlorinator_alert
+      serviceMode: binary_sensor.example_pool_service_mode
+      restore: button.example_pool_resume_schedules
+    sections:
+      temperature: auto
+      circulation: auto
+      lighting: auto
+      quality: auto
+    navigation:
+      - label: Home
+        path: /lovelace/home
+        icon: mdi:home-outline
+      - label: Pool
+        path: /lovelace/pool
+        icon: mdi:pool

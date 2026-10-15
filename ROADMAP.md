@@ -1,35 +1,36 @@
 # Roadmap
 
-## 1. Visual card editor
+## Implemented in 0.2.0 development
 
-- Use Home Assistant's supported custom-card editor APIs and native selectors.
-- Group entity pickers by temperature/heating, circulation, lighting and chlorination.
-- Configure title, photo, visible sections and appearance with a live preview.
-- Offer safe starter configuration without selecting unrelated equipment.
-- Preserve advanced YAML configuration.
+- Visual editor using native Home Assistant selectors and a live card preview.
+- Grouped equipment mappings, editable labels and local pool photo.
+- Automatic / always show / hide section visibility.
+- Card and panel layouts, accent colors and optional navigation.
+- Domain and configuration validation; no automatic equipment selection.
+- Explicit temperature units and heater limit/step handling.
+- MIT license, HACS manifest, examples, contribution and issue templates.
+- Automated configuration, editor preservation and command-routing checks.
+- Draft release workflow with a single JavaScript module.
+- Real Home Assistant editor save/reopen, native selector and section-visibility verification.
+- Tablet landscape/portrait and embedded-card layout checks.
 
-## 2. Reusable card
+## Before a public release
 
-- Remove remaining controller-specific assumptions from presentation and configuration.
-- Hide equipment sections and controls that are not configured.
-- Use entity units and equipment limits, including Fahrenheit and Celsius.
-- Add embedded-card and full-dashboard layouts; configurable optional navigation.
-- Validate action entity domains and supported controls.
-- Migrate the existing local installation using explicit private configuration.
-- Test unavailable/unknown states, service mode, disconnections, failed commands and canceled confirmations using mocks, then verify tablet layouts.
+- Review repository history and assets for private household data.
+- Add repository description and searchable topics on GitHub.
+- Confirm supported OmniLogic integration version and minimum Home Assistant version.
+- Tag and review a draft release, then explicitly approve publishing and repository visibility.
+- Test installation through a HACS custom repository once the repository is public.
+- Consider HACS default listing after custom-repository installation works.
 
-## 3. Public release preparation
+## Later
 
-- Select license and document supported controllers and minimum Home Assistant version.
-- Add generic demo assets, screenshots and example configurations.
-- Produce versioned JavaScript releases, HACS metadata and validation checks.
-- Document installation, configuration, upgrades and troubleshooting.
-- Review the complete repository history for household data before any visibility change.
-- Release initially via a HACS custom repository; consider default listing later.
-- Obtain explicit approval before changing repository visibility to public.
+- Additional controller adapters after testing.
+- Optional entity suggestions constrained to the selected pool device.
+- Localization and additional appearance presets.
 
 ## References
 
 - https://developers.home-assistant.io/docs/frontend/custom-ui/custom-card/
+- https://www.hacs.xyz/docs/publish/start/
 - https://www.hacs.xyz/docs/publish/plugin/
-- https://github.com/ngocjohn/vehicle-status-card

@@ -1,0 +1,6 @@
+{
+  "name": "Pool Control Card",
+  "filename": "pool-control-card.js",
+  "content_in_root": true,
+  "homeassistant": "2026.10.0"
+}

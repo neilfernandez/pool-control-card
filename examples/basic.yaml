@@ -1,0 +1,9 @@
+type: custom:pool-control-card
+title: Pool
+layout: card
+entities:
+  water: sensor.example_pool_water_temperature
+  air: sensor.example_outdoor_temperature
+  heater: water_heater.example_pool_heater
+  pump: switch.example_pool_pump
+  speed: number.example_pool_pump_speed
