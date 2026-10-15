@@ -17,7 +17,10 @@ jobs:
       - run: npm run check && npm test
       - name: Verify release version
         run: test "${GITHUB_REF_NAME#v}" = "$(node -p 'require("./package.json").version')"
-      - name: Create draft release with card module
+      - name: Publish release with card module
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "$GITHUB_REF_NAME" pool-control-card.js --verify-tag --generate-notes --draft
+        run: |
+          release_args=(--verify-tag --title "Pool Control Card ${GITHUB_REF_NAME#v}" --notes-file RELEASE_NOTES.md)
+          if [[ "$GITHUB_REF_NAME" == *-* ]]; then release_args+=(--prerelease); fi
+          gh release create "$GITHUB_REF_NAME" pool-control-card.js "${release_args[@]}"

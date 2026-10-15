@@ -7,13 +7,13 @@
 A photo-led Home Assistant card for pool temperature, circulation, lighting and chlorination — configured through the visual card editor.
 
 [![Checks](https://github.com/neilfernandez/pool-control-card/actions/workflows/checks.yml/badge.svg)](https://github.com/neilfernandez/pool-control-card/actions/workflows/checks.yml)
-![Development version](https://img.shields.io/badge/version-0.2.0_development-57c7dc)
+[![Beta release](https://img.shields.io/badge/beta-0.2.0--beta.1-57c7dc)](https://github.com/neilfernandez/pool-control-card/releases/tag/v0.2.0-beta.1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Home Assistant](https://img.shields.io/badge/Home_Assistant-2026.10%2B-18bcf2)
 
 </div>
 
-> **Private development preview.** The visual editor is implemented. No public release or HACS listing has been published. HACS installation becomes available after the repository is public and its release is verified.
+> **Beta preview.** Tested with Hayward OmniPL using OmniLogic Local 2.0.2. Other integrations may work when they expose compatible entities, but are not yet verified. Entity mappings are configurable; arbitrary service/action mappings are not yet implemented.
 
 ![Pool Control Card with simulated equipment](docs/images/preview.png)
 
@@ -48,15 +48,22 @@ A photo-led Home Assistant card for pool temperature, circulation, lighting and 
 
 ## Installation
 
-### HACS — planned
+### HACS — custom repository
 
-The repository includes its HACS manifest and correctly named JavaScript module. It is **not in the HACS default store yet**, and a private repository cannot be installed through HACS. After public release, installation will initially use **HACS → Custom repositories → Dashboard**. Instructions and a direct HACS link will be added after that flow has been verified.
+The card is **not listed in the HACS default store**. To add it as a custom repository:
 
-### Manual installation — development
+1. Open HACS, then its menu and **Custom repositories**.
+2. Add `https://github.com/neilfernandez/pool-control-card` with type **Dashboard**.
+3. Open **Pool Control Card** in HACS and download the version you want to test.
+4. Reload Home Assistant, then add the card through the dashboard editor.
 
-1. Copy `pool-control-card.js` into Home Assistant's `config/www/` directory.
+This is a beta release. HACS may filter prereleases from its default version selection; use the repository's default branch during the preview or follow the manual beta installation below if the beta tag is not offered. End-to-end HACS installation verification is tracked separately from the card's tests.
+
+### Manual installation
+
+1. Download `pool-control-card.js` from the [beta release](https://github.com/neilfernandez/pool-control-card/releases/tag/v0.2.0-beta.1) and copy it into Home Assistant's `config/www/` directory.
 2. Open **Settings → Dashboards → ⋮ → Resources**. Advanced Mode may need to be enabled in your Home Assistant profile.
-3. Add `/local/pool-control-card.js?v=0.2.0` as a **JavaScript module**.
+3. Add `/local/pool-control-card.js?v=0.2.0-beta.1` as a **JavaScript module**.
 4. Reload Home Assistant in your browser.
 5. Open a dashboard, choose **Edit dashboard → Add card**, and search for **Pool Control Card**.
 6. Pick your equipment in the visual editor and save.
@@ -140,7 +147,8 @@ Confirmations cover pump operations, heater changes, light effects, chlorinator 
 
 - **Home Assistant 2026.10 or later** is the current target. Earlier versions are not verified.
 - Initial integration target: **OmniLogic Local 2.0.2 / Hayward OmniPL**.
-- Other controllers are not yet listed as supported, even if some matching entities work.
+- Other integrations may work with compatible entity interfaces; they have not yet been verified. The card has no direct dependency on a Hayward API.
+- Entity selection is configurable. Control domains and actions currently follow the interfaces below; arbitrary action mappings and `climate` heaters are not implemented.
 - Heater control expects `water_heater.set_operation_mode` with `on` / `off`, plus `set_temperature`.
 - Pump speed and chlorinator output expect percentage `number` entities.
 - Preset labels use the integration's `speed` attribute when available.
@@ -156,7 +164,7 @@ npm run check
 npm test
 ```
 
-See [Contributing](CONTRIBUTING.md), [Changelog](CHANGELOG.md) and [Roadmap](ROADMAP.md). The tagged release workflow creates a draft release for review; it does not publish or change repository visibility automatically.
+See [Contributing](CONTRIBUTING.md), [Changelog](CHANGELOG.md) and [Roadmap](ROADMAP.md). Pushing a version tag runs the checks and publishes the JavaScript release asset. Tags containing a prerelease suffix are marked as prereleases. The workflow never changes repository visibility.
 
 The card and editor are original implementations. [Vehicle Status Card](https://github.com/ngocjohn/vehicle-status-card) inspired the approach to visual configuration and project presentation.
 

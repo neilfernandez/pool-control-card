@@ -1,6 +1,6 @@
 # Contributing
 
-Pool Control Card is currently in private development. The first supported controller target is Hayward OmniLogic Local / OmniPL. Additional integrations need explicit testing before being listed as supported.
+Pool Control Card is an early public beta. The first supported controller target is Hayward OmniLogic Local / OmniPL. Additional integrations need explicit testing before being listed as supported.
 
 ## Work locally
 
@@ -25,6 +25,6 @@ Register the root `pool-control-card.js` file as a JavaScript module in a develo
 
 ## Releases
 
-Keep `POOL_VERSION`, `package.json` and `CHANGELOG.md` aligned. A `v` tag matching the package version triggers checks and creates a **draft** GitHub release containing the JavaScript module. Review that draft before publishing. There is no automated repository visibility change or HACS listing submission.
+Keep `POOL_VERSION`, `package.json` and `CHANGELOG.md` aligned. A `v` tag matching the package version triggers checks and publishes a GitHub release containing the JavaScript module after checks pass. Prerelease version tags are marked as prereleases. Review the source, release notes and tests before pushing a tag. There is no automated repository visibility change or HACS listing submission.
 
 Public release also requires a description and relevant GitHub topics, a full history review for household data, and confirmation that documentation matches actual supported behavior. See [ROADMAP.md](ROADMAP.md).
