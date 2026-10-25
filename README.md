@@ -7,13 +7,13 @@
 A photo-led Home Assistant card for pool temperature, circulation, lighting and chlorination — configured through the visual card editor.
 
 [![Checks](https://github.com/neilfernandez/pool-control-card/actions/workflows/checks.yml/badge.svg)](https://github.com/neilfernandez/pool-control-card/actions/workflows/checks.yml)
-[![Beta release](https://img.shields.io/badge/beta-0.2.0--beta.1-57c7dc)](https://github.com/neilfernandez/pool-control-card/releases/tag/v0.2.0-beta.1)
+[![Release](https://img.shields.io/badge/release-0.2.0-57c7dc)](https://github.com/neilfernandez/pool-control-card/releases/tag/v0.2.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Home Assistant](https://img.shields.io/badge/Home_Assistant-2026.10%2B-18bcf2)
 
 </div>
 
-> **Beta preview.** Tested with Hayward OmniPL using OmniLogic Local 2.0.2. Other integrations may work when they expose compatible entities, but are not yet verified. Entity mappings are configurable; arbitrary service/action mappings are not yet implemented.
+> **Compatibility.** Tested with Hayward OmniPL using OmniLogic Local 2.0.2. Other integrations may work when they expose compatible entities, but are not yet verified. Entity mappings are configurable; arbitrary service/action mappings are not yet implemented.
 
 ![Pool Control Card with simulated equipment](docs/images/preview.png)
 
@@ -54,16 +54,16 @@ The card is **not listed in the HACS default store**. To add it as a custom repo
 
 1. Open HACS, then its menu and **Custom repositories**.
 2. Add `https://github.com/neilfernandez/pool-control-card` with type **Dashboard**.
-3. Open **Pool Control Card** in HACS and download the version you want to test.
+3. Open **Pool Control Card** in HACS and download version **0.2.0**.
 4. Reload Home Assistant, then add the card through the dashboard editor.
 
-This is a beta release. HACS may filter prereleases from its default version selection; use the repository's default branch during the preview or follow the manual beta installation below if the beta tag is not offered. End-to-end HACS installation verification is tracked separately from the card's tests.
+Version 0.2.0 is intended for a full, non-prerelease release. The prior beta was installed successfully through HACS as a custom repository; its installed module matched the tested release asset. The HACS default-store submission is still under review.
 
 ### Manual installation
 
-1. Download `pool-control-card.js` from the [beta release](https://github.com/neilfernandez/pool-control-card/releases/tag/v0.2.0-beta.1) and copy it into Home Assistant's `config/www/` directory.
+1. Download `pool-control-card.js` from the [release](https://github.com/neilfernandez/pool-control-card/releases/tag/v0.2.0) and copy it into Home Assistant's `config/www/` directory.
 2. Open **Settings → Dashboards → ⋮ → Resources**. Advanced Mode may need to be enabled in your Home Assistant profile.
-3. Add `/local/pool-control-card.js?v=0.2.0-beta.1` as a **JavaScript module**.
+3. Add `/local/pool-control-card.js?v=0.2.0` as a **JavaScript module**.
 4. Reload Home Assistant in your browser.
 5. Open a dashboard, choose **Edit dashboard → Add card**, and search for **Pool Control Card**.
 6. Pick your equipment in the visual editor and save.
@@ -171,3 +171,4 @@ The card and editor are original implementations. [Vehicle Status Card](https://
 ## License
 
 [MIT](LICENSE). Home Assistant and HACS are independent projects; this card is a community project.
+

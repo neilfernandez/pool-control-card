@@ -1,6 +1,6 @@
-# Pool Control Card 0.2.0-beta.1
+# Pool Control Card 0.2.0
 
-First public beta of a configurable Home Assistant pool dashboard card.
+First full release of a configurable Home Assistant pool dashboard card. Promotes the functionality of 0.2.0-beta.1 with version and documentation updates; no equipment-control behavior changes.
 
 ## Included
 
@@ -14,14 +14,15 @@ First public beta of a configurable Home Assistant pool dashboard card.
 
 Tested with Home Assistant 2026.10.1 and Hayward OmniPL through OmniLogic Local 2.0.2. Requires Home Assistant 2026.10 or later.
 
-Other integrations may work if they expose compatible entities. This beta supports configurable entity mappings; arbitrary service/action mappings and `climate` heaters are not implemented. Heater operation expects `water_heater` with on/off modes, pump speed and chlorinator output expect percentage number entities, and preset labels use a speed attribute when present.
+Other integrations may work if they expose compatible entities. The card supports configurable entity mappings; arbitrary service/action mappings and `climate` heaters are not implemented. Heater operation expects `water_heater` with on/off modes, pump speed and chlorinator output expect percentage number entities, and preset labels use a speed attribute when present.
 
 ## Install
 
-Download the attached `pool-control-card.js`, place it in `config/www/`, and add `/local/pool-control-card.js?v=0.2.0-beta.1` as a JavaScript module in dashboard resources. Reload Home Assistant, add Pool Control Card, and select your equipment using the visual editor.
+Download the attached `pool-control-card.js`, place it in `config/www/`, and add `/local/pool-control-card.js?v=0.2.0` as a JavaScript module in dashboard resources. Reload Home Assistant, add Pool Control Card, and select your equipment using the visual editor.
 
-HACS custom-repository instructions are in the README. The card is not in the HACS default store, and end-to-end HACS installation verification is still pending. No personal pool photograph is bundled.
+HACS custom-repository instructions are in the README. The card is not in the HACS default store, and its default-store submission is still under review. The prior beta was installed successfully through HACS as a custom repository, with the installed module matching the tested release asset. No personal pool photograph is bundled.
 
 ## Validation
 
 Fifteen automated tests cover configuration, editor preservation, command routing, unavailable/disconnected states, service mode, Celsius targets, errors and cancellation. The visual editor's live preview, save/reopen behavior, native selectors and section visibility have been checked in Home Assistant. Tablet landscape/portrait and an embedded card layout have been checked. Service tests use simulated equipment.
+

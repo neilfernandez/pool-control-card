@@ -24,7 +24,7 @@ const POOL_DEFAULTS = Object.freeze({
   restore: '',
 });
 
-const POOL_VERSION = '0.2.0-beta.1';
+const POOL_VERSION = '0.2.0';
 const POOL_FIELDS = [
   ['water', 'Water temperature', 'sensor', 'temperature'],
   ['air', 'Air temperature', 'sensor', 'temperature'],
@@ -591,3 +591,4 @@ if (!window.customCards.some(c => c.type === 'pool-control-card')) window.custom
   description: 'Photo-led pool controls with a visual editor and live equipment status.',
   documentationURL: 'https://github.com/neilfernandez/pool-control-card',
 });
+

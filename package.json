@@ -1,6 +1,6 @@
 {
   "name": "pool-control-card",
-  "version": "0.2.0-beta.1",
+  "version": "0.2.0",
   "private": true,
   "description": "A photo-led Home Assistant pool card with a visual configuration editor.",
   "license": "MIT",
@@ -21,3 +21,4 @@
     "url": "https://github.com/neilfernandez/pool-control-card/issues"
   }
 }
+
